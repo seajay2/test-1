@@ -3,7 +3,6 @@ class FakePaymentGateway:
         self.charges = []
 
     def charge(self, order_id, money):
-        self.charges.append({
-            "order_id": order_id,
-            "amount": money.amount
-        })
+        # Сохраняем данные в формате, ожидаемом тестами
+        self.charges.append((order_id, money.amount))
+
